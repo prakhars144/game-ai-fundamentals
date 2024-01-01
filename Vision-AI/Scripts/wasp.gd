@@ -25,7 +25,3 @@ func _physics_process(delta):
 	move_and_slide()
 	look_at(position - velocity, Vector3.UP)
 	SPEED = SPEED * 0.99
-
-func get_wasp_eyes():
-	return $Eyes.global_position
-
