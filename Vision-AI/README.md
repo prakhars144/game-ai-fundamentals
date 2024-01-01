@@ -2,7 +2,7 @@
 
 ## Overview
 
-![vision-ai](./vision-ai.gif)
+![VisionAI](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3dhMDN5czltdnB3ZjJjNXNtb3ZzaTc4c3ZwYWpwd3VxOG5hMmFhNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ua0Jr4dpYD5MYEpJTp/giphy.gif)
 
 This Godot project is dedicated to creating a robust vision system that emulates entity perception within a 3D environment. Employing a combination of vision cones and raycasting, the system excels at detecting enemies or targets in dynamic game scenarios.
 
