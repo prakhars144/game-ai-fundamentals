@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://bn3y171nvj6cb"]
+
+[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="1_ty5vv"]
+[ext_resource type="PackedScene" uid="uid://dyeap3psuwgu8" path="res://Scenes/Wasp/wasp.tscn" id="2_70i75"]
+[ext_resource type="Script" path="res://Scripts/wasp.gd" id="3_ink15"]
+[ext_resource type="PackedScene" uid="uid://dmne7bwyi23vt" path="res://Scenes/Spider/Spider.tscn" id="4_quuma"]
+[ext_resource type="PackedScene" uid="uid://dvypuac30e11p" path="res://Scenes/Wall/wall_012.tscn" id="5_ya678"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfgxd"]
+albedo_color = Color(0, 0.631373, 0.317647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jmt6g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwl1k"]
+albedo_color = Color(0, 0.6, 0.972549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_toeg6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3i11"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.44959, 0, 0, 0, 0.082449, 0, 0, 0, 8.55104, 0, 0, 0.0849209)
+material_override = SubResource("StandardMaterial3D_gfgxd")
+mesh = SubResource("BoxMesh_jmt6g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.509522, 0.860458, 0, -0.860458, 0.509522, 0, 3.39404, 4.3377)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.6434e-08, -8.33306e-08, -1.71706e-08, 0.875237, 0.483695, 8.572e-08, 0.483695, -0.875237, 0, 2.04523, -3.89116)
+current = true
+script = ExtResource("1_ty5vv")
+
+[node name="VisionBars" type="Node3D" parent="."]
+
+[node name="VisionBarRight" type="MeshInstance3D" parent="VisionBars"]
+transform = Transform3D(0.0616304, 0, -4.41606, 0, 0.044, 0, 0.0616304, 0, 4.41606, -2.25852, 0.0474236, -0.00467113)
+material_override = SubResource("StandardMaterial3D_rwl1k")
+mesh = SubResource("BoxMesh_toeg6")
+surface_material_override/0 = SubResource("StandardMaterial3D_q3i11")
+
+[node name="VisionBarLeft" type="MeshInstance3D" parent="VisionBars"]
+transform = Transform3D(0.0616304, 0, 4.41606, 0, 0.044, 0, -0.0616304, 0, 4.41606, 2.28226, 0.0474236, -0.00467113)
+material_override = SubResource("StandardMaterial3D_rwl1k")
+mesh = SubResource("BoxMesh_toeg6")
+surface_material_override/0 = SubResource("StandardMaterial3D_q3i11")
+
+[node name="Wasp" parent="." instance=ExtResource("2_70i75")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, -3.0076, 0.712635, 1.81152)
+script = ExtResource("3_ink15")
+
+[node name="Spider" parent="." instance=ExtResource("4_quuma")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.591556, -2.04335)
+
+[node name="Wall01" parent="." instance=ExtResource("5_ya678")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.833246, 0)
